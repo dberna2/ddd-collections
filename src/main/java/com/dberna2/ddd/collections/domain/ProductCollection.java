@@ -14,8 +14,8 @@ public final class ProductCollection {
     this.products = products;
   }
 
-  public ProductCollection take(int limit) {
-    return new ProductCollection(this.products.stream().limit(limit).toList());
+  public ProductCollection take(int value) {
+    return new ProductCollection(this.products.stream().limit(value).toList());
   }
 
   public ProductCollection filterIfPriceIsGreaterThan(final int value) {
@@ -38,7 +38,7 @@ public final class ProductCollection {
         .collect(Collectors.groupingBy(Product::category));
   }
 
-  public List<Product> collect() {
+  public List<Product> toList() {
     return new ArrayList<>(this.products);
   }
 }

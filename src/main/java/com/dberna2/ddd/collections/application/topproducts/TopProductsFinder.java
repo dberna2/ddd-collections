@@ -17,6 +17,6 @@ public final class TopProductsFinder {
     return this.findProductRepository.findAll()
         .sortByPrice()
         .take(limit)
-        .collect();
+        .toList();
   }
 }
